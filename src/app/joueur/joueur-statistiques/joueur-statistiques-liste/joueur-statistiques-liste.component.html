@@ -1,0 +1,40 @@
+<div>
+    <h4>Liste des statistiques joueurs</h4>
+    <div class="my-2">
+        <button type="button" (click)="ajouterStatsJoueur()">Ajouter une statistique de joueur</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom complet</th>
+                <th scope="col">Parties jouées</th>
+                <th scope="col">Nombre de buts marqués</th>
+                <th scope="col">Nombre de passes</th>
+                <th scope="col">Nombre de points</th>
+                <th scope="col">Minutes de pénalités</th>
+                <th scope="col">Plus/moins</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <th scope="row">{{ item.no_JoueurRefId }}</th>
+                <td>{{ item.joueur.prenom }} {{ item.joueur.nom }}</td>
+                <td>{{ item.nbPartiesJouees }}</td>
+                <td>{{ item.nbButs }}</td>
+                <td>{{ item.nbPasses }}</td>
+                <td>{{ item.nbPoints }}</td>
+                <td>{{ item.nbMinutesPenalites }}</td>
+                <td>{{ item.plusseMoins }}</td>
+                <td>
+                    <button type="button" (click)="consulterStatistiquesJoueur(item.no_JoueurRefId, item.anneeStats)">Consulter</button>
+                </td>
+                <td>
+                    <button type="button" (click)="modifierStatistiquesJoueur(item.no_JoueurRefId, item.anneeStats)">Modifier</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

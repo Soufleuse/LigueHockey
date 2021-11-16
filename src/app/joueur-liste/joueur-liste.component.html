@@ -1,0 +1,33 @@
+<div>
+    <h4>Liste des joueurs</h4>
+    <div class="my-2">
+        <button type="button" (click)="ajouterJoueur()">Ajouter un joueur</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom complet</th>
+                <th scope="col">Ville de naissance</th>
+                <th scope="col">Pays d'origine</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <th scope="row">{{ item.no_Joueur }}</th>
+                <td>{{ item.prenom }} {{ item.nom }}</td>
+                <td>{{ item.ville_naissance }}</td>
+                <td>{{ item.pays_origine }}</td>
+                <td>
+                    <button type="button" (click)="consulterJoueur(item.no_Joueur)">Consulter</button>
+                </td>
+                <td>
+                    <button type="button" (click)="modifierJoueur(item.no_Joueur)">Modifier</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
