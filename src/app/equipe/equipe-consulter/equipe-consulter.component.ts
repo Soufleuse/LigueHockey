@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Equipe } from 'src/app/services/equipe';
 import { EquipeService } from 'src/app/services/equipe.service';
@@ -16,8 +16,7 @@ export class EquipeConsulterComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private equipeService: EquipeService,
-              private routeActive: ActivatedRoute,
-              private monRouteur: Router) {
+              private routeActive: ActivatedRoute) {
     
     this.equipeForm = this.fb.group({
       nom_Equipe: [''],
