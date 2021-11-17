@@ -1,6 +1,6 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder, FormsModule, NgControl } from '@angular/forms';
+import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { FormBuilder, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { Equipe } from 'src/app/services/equipe';
@@ -11,6 +11,7 @@ import { EquipeConsulterComponent } from './equipe-consulter.component';
 describe('EquipeConsulterComponent', () => {
   let component: EquipeConsulterComponent;
   let fixture: ComponentFixture<EquipeConsulterComponent>;
+  let testBedService: NgControl;
 
   const faleActivatedRoute = {
     snapshot: { paramMap: { get(): string { return '1'; } } }
@@ -31,14 +32,14 @@ describe('EquipeConsulterComponent', () => {
 
     await TestBed.configureTestingModule({
       imports: [
-        FormsModule
+        ReactiveFormsModule
       ],
       declarations: [ EquipeConsulterComponent ],
       providers: [
         FormBuilder,
+        NgControl,
         HttpClient,
         HttpHandler,
-        NgControl,
         { provide: ActivatedRoute, useValue: faleActivatedRoute }
       ]
     })
@@ -51,7 +52,11 @@ describe('EquipeConsulterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  /*it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  });*/
+  it('devrait charger les données', inject([NgControl], (injectService: NgControl) => {
+    let nomEquipe = component.equipeForm.controls['nom_Equipe'];
+    expect(nomEquipe.valid).toBeTruthy();
+  }));
 });
