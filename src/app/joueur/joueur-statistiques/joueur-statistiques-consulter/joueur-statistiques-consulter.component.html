@@ -1,0 +1,24 @@
+<div>
+    <h4>Statistiques de {{ data?.joueur?.prenom }} {{ data?.joueur?.nom }}</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Parties jouées</th>
+                <th scope="col">Nombre de buts marqués</th>
+                <th scope="col">Nombre de passes</th>
+                <th scope="col">Nombre de points</th>
+                <th scope="col">Minutes de pénalités</th>
+                <th scope="col">Plus/moins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ data?.nbPartiesJouees }}</th>
+                <td>{{ data?.nbButs }}</td>
+                <td>{{ data?.nbPasses }}</td>
+                <td>{{ data?.nbPoints }}</td>
+                <td>{{ data?.nbMinutesPenalites }}</td>
+                <td>{{ data?.plusseMoins }}</td>
+        </tbody>
+    </table>
+</div>

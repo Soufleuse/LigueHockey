@@ -1,0 +1,33 @@
+<div>
+    <h4>Liste des équipes</h4>
+    <div class="my-2">
+        <button type="button" (click)="ajouterEquipe()">Ajouter une équipe</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom équipe</th>
+                <th>Ville</th>
+                <th>Année début</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td>{{ item.no_Equipe }}</td>
+                <td>{{ item.nom_Equipe }}</td>
+                <td>{{ item.ville }}</td>
+                <td>{{ item.annee_debut }}</td>
+                <td>
+                    <button type="button" (click)="consulterAlignement(item.no_Equipe)">Alignement...</button>
+                </td>
+                <td>
+                    <button type="button" (click)="consulterEquipe(item.no_Equipe)">Consulter</button>
+                </td>
+                <td>
+                    <button type="button" (click)="modifierEquipe(item.no_Equipe)">Modifier</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

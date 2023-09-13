@@ -1,0 +1,22 @@
+<div>
+    <h4>Alignement</h4>
+    <table>
+        <thead>
+            <tr>
+                <th># dossard</th>
+                <th>Nom joueur</th>
+                <th>Depuis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td>{{ item.no_dossard }}</td>
+                <td>{{ item.prenom_nom_joueur }}</td>
+                <td>{{ item.date_debut_avec_equipe }}</td>
+                <td>
+                    <button type="button" (click)="consulterJoueur(item.no_joueur)">Consulter</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+<div class="form-group" [formGroup]="statsJoueurForm">
+    <label for=selectionJoueur>Ajouter des statistiques pour </label>
+    <div class="form-row">
+        <select id="selectionJoueur">
+            <option *ngFor="let unJoueur of listeJoueur;" value="{{ unJoueur.no_Joueur }}">
+                {{ unJoueur.no_Joueur }} {{ unJoueur.prenom }} {{ unJoueur.nom }}
+            </option>
+        </select>
+    </div>
+
+    <label for="anneeStats">Année des statistiques: </label>
+    <input class="form-control" type="text" id="anneeStats" formControlName="anneeStats">
+    <label for="nbPartiesJouees">Nb Parties jouées: </label>
+    <input class="form-control" type="text" id="nbPartiesJouees" formControlName="nbPartiesJouees">
+    <label for="nbButs">Nombre de buts: </label>
+    <input class="form-control" type="text" id="nbButs" formControlName="nbButs">
+    <label for="nbPasses">Nombre de passes: </label>
+    <input class="form-control" type="text" id="nbPasses" formControlName="nbPasses">
+    <label for="nbMinutesPenalites">Minutes de pénalités: </label>
+    <input class="form-control" type="text" id="nbMinutesPenalites" formControlName="nbMinutesPenalites">
+    <label for="plusseMoins">Plusse/moins: </label>
+    <input class="form-control" type="text" id="plusseMoins" formControlName="plusseMoins">
+    
+    <button type="submit" class="btn btn-primary my-3" (click)="surEnregistrer()">Soumettre</button>
+    <input class="form-control" type="text" id="messageAAfficher" formControlName="messageAAfficher" readonly>
+</div>
