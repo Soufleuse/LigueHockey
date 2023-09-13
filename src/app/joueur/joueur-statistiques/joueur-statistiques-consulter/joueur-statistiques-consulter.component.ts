@@ -23,7 +23,7 @@ export class JoueurStatistiquesConsulterComponent implements OnInit {
       const monObservation = {
         next: (reponse: StatsJoueurDto) => { this.data = reponse; },
         error: (err: Error) => { console.log('Erreur: ' + err.message); },
-        complete: () => console.log('Lecture des stats de joueur complÃ©tÃ©e')
+        complete: () => console.log('Lecture des stats de joueur complétée')
       };
       this.joueurStatsService.obtenirStatsJoueur(noJoueur, anneeStats).subscribe(monObservation);
     });

@@ -23,7 +23,7 @@ export class AlignementListeComponent implements OnInit {
     const monObservation = {
       next: (reponse: Alignement[]) => { this.data = reponse; },
       error: (err: Error) => { console.log('Erreur: ' + err.message); },
-      complete: () => console.log("Lecture de l''alignement terminÃ©")
+      complete: () => console.log("Lecture de l''alignement terminé")
     };
     this.alignementService.obtenirAlignementSelonEquipe(+noEquipenonNull).subscribe(monObservation);
   }
