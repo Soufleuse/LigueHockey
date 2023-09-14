@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   AnneeStats: 2020,
-  baseUrl: `https://localhost:5001/api/`
+  baseUrl: `http://localhost:5245/api/`
 };
 
 //baseUrl: `https://localhost:44358/api/`

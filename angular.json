@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "LigueHockeyV2": {
+    "LigueHockey": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ligue-hockey-v2",
+            "outputPath": "dist/ligue-hockey",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -58,12 +58,17 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4900,
+            "browserTarget": "LigueHockey:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "LigueHockeyV2:build:production"
+              "browserTarget": "LigueHockey:build:production"
             },
             "development": {
-              "browserTarget": "LigueHockeyV2:build:development"
+              "browserTarget": "LigueHockey:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "LigueHockeyV2:build"
+            "browserTarget": "LigueHockey:build"
           }
         },
         "test": {

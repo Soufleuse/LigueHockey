@@ -10,7 +10,7 @@ import { Equipe } from './equipe';
 })
 export class EquipeService extends baseService {
 
-  private equipeUrl = this.baseUrl + 'EquipeBds';
+  private equipeUrl = this.baseUrl + 'Equipe';
 
   constructor(private http: HttpClient) {
     super();

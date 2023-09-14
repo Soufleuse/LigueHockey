@@ -18,7 +18,8 @@ export class EquipeListeComponent implements OnInit {
   ngOnInit(): void {
     const monObservation = {
       next: (reponse: Equipe[]) => { this.data = reponse; },
-      error: (err: Error) => { console.log('Erreur: ' + err.message); }
+      error: (err: Error) => { console.log('Erreur: ' + err.message); },
+      complete: () => { console.log("Lecture des équipes effectuée"); }
     };
     this.equipeService.obtenirListeEquipes().subscribe(monObservation);
   }
