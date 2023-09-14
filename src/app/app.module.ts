@@ -19,6 +19,7 @@ import { JoueurStatistiquesConsulterComponent } from './joueur/joueur-statistiqu
 import { JoueurStatistiquesModifierComponent } from './joueur/joueur-statistiques/joueur-statistiques-modifier/joueur-statistiques-modifier.component';
 import { JoueurStatistiquesListeComponent } from './joueur/joueur-statistiques/joueur-statistiques-liste/joueur-statistiques-liste.component';
 import { JoueurStatistiquesAjouterComponent } from './joueur/joueur-statistiques/joueur-statistiques-ajouter/joueur-statistiques-ajouter.component';
+
 registerLocaleData(localeFr);
 
 @NgModule({
