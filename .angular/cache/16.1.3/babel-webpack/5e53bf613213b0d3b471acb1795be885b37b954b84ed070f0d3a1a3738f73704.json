@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class Equipe {\n  constructor() {\n    this.no_Equipe = 0;\n    this.nom_Equipe = \"\";\n    this.ville = \"\";\n    this.annee_debut = 0;\n    this.annee_fin = null;\n    this.est_Devenue_Equipe = null;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
