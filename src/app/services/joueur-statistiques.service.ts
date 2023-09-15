@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class JoueurStatistiquesService extends baseService {
-  private statsJoueurUrl = this.baseUrl + 'StatsJoueurBds/';
+  private statsJoueurUrl = this.baseUrl + 'StatsJoueur/';
 
   constructor(private http: HttpClient) {
     super();

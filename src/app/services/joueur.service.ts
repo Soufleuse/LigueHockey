@@ -10,7 +10,7 @@ import { JoueurDto } from './joueur';
 })
 export class JoueurService extends baseService {
 
-  private joueurUrl = this.baseUrl + 'JoueurBds';
+  private joueurUrl = this.baseUrl + 'Joueur';
 
   constructor(private http: HttpClient) {
     super();
