@@ -19,17 +19,17 @@ export class JoueurStatistiquesListeComponent implements OnInit {
     const monObservation = {
       next: (reponse: StatsJoueurDto[]) => { this.data = reponse; },
       error: (err: Error) => { console.log('Erreur: ' + err.message); },
-      complete: () => { console.log("Lecture réussie"); }
+      complete: () => { console.log("Lecture rï¿½ussie"); }
     };
     this.joueurStatsService.obtenirListeStatsJoueur().subscribe(monObservation);
   }
 
-  consulterStatistiquesJoueur(no_joueur: number, annee_stats: number): void {
-    this.router.navigate(['joueur-statistiques-consulter/' + no_joueur + '/' + annee_stats]);
+  consulterStatistiquesJoueur(noJoueur: number, annee_stats: number): void {
+    this.router.navigate(['joueur-statistiques-consulter/' + noJoueur + '/' + annee_stats]);
   }
 
-  modifierStatistiquesJoueur(no_joueur: number, annee_stats: number): void {
-    this.router.navigate(['joueur-statistiques-modifier/' + no_joueur + '/' + annee_stats]);
+  modifierStatistiquesJoueur(noJoueur: number, annee_stats: number): void {
+    this.router.navigate(['joueur-statistiques-modifier/' + noJoueur + '/' + annee_stats]);
   }
 
   ajouterStatsJoueur(): void {

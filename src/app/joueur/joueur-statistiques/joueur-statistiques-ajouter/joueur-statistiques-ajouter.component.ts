@@ -48,9 +48,9 @@ export class JoueurStatistiquesAjouterComponent implements OnInit {
   surEnregistrer(): void {
     let element = <HTMLSelectElement>document.getElementById('selectionJoueur');
     let idJoueurSelectionne = +((element).value);
-    let joueurSelectionne = this.listeJoueur.find(x => x.no_Joueur == idJoueurSelectionne);
+    let joueurSelectionne = this.listeJoueur.find(x => x.id == idJoueurSelectionne);
 
-    this.statsJoueurData.no_JoueurRefId = joueurSelectionne!.no_Joueur;
+    this.statsJoueurData.joueurId = joueurSelectionne!.id;
     this.statsJoueurData.anneeStats = this.statsJoueurForm.get('anneeStats')!.value;
     this.statsJoueurData.nbPartiesJouees = this.statsJoueurForm.get('nbPartiesJouees')!.value;
     this.statsJoueurData.nbButs = this.statsJoueurForm.get('nbButs')!.value;

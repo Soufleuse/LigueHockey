@@ -31,7 +31,7 @@ export class JoueurService extends baseService {
   }
 
   majJoueur(joueur: JoueurDto): Observable<JoueurDto> {
-    const monUrl = this.joueurUrl + `/` + joueur.no_Joueur;
+    const monUrl = this.joueurUrl + `/` + joueur.id;
     return this.http.put<JoueurDto>(monUrl, joueur, this.httpOptions)
       .pipe(catchError(this.handleError('put', joueur)));
 

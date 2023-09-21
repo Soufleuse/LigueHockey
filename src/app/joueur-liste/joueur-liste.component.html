@@ -16,15 +16,15 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of data">
-                <th scope="row">{{ item.no_Joueur }}</th>
+                <th scope="row">{{ item.id }}</th>
                 <td>{{ item.prenom }} {{ item.nom }}</td>
-                <td>{{ item.ville_naissance }}</td>
-                <td>{{ item.pays_origine }}</td>
+                <td>{{ item.villeNaissance }}</td>
+                <td>{{ item.paysOrigine }}</td>
                 <td>
-                    <button type="button" (click)="consulterJoueur(item.no_Joueur)">Consulter</button>
+                    <button type="button" (click)="consulterJoueur(item.id)">Consulter</button>
                 </td>
                 <td>
-                    <button type="button" (click)="modifierJoueur(item.no_Joueur)">Modifier</button>
+                    <button type="button" (click)="modifierJoueur(item.id)">Modifier</button>
                 </td>
             </tr>
         </tbody>

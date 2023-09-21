@@ -1,8 +1,8 @@
 export class Equipe {
-    no_Equipe: number = 0;
-    nom_Equipe: string = "";
+    id: number = 0;
+    nomEquipe: string = "";
     ville: string = "";
-    annee_debut: number = 0;
-    annee_fin: number | null = null;
-    est_Devenue_Equipe: number | null = null;
+    anneedebut: number = 0;
+    anneefin: number | null = null;
+    estDevenueEquipe: number | null = null;
 }

@@ -20,11 +20,11 @@ export class EquipeModifierComponent implements OnInit {
               private routeActive: ActivatedRoute) {
 
     this.equipeForm = this.fb.group({
-      nom_Equipe: ['', Validators.required],
+      nomEquipe: ['', Validators.required],
       ville: ['', Validators.required],
-      annee_debut: ['', Validators.required],
-      annee_fin: [''],
-      est_Devenue_Equipe: [''],
+      anneeDebut: ['', Validators.required],
+      anneeFin: [''],
+      estDevenueEquipe: [''],
       messageAAfficher: ['']
     });
    }
@@ -37,12 +37,12 @@ export class EquipeModifierComponent implements OnInit {
     // Va lire l'équipe à modifier si on a un numéro d'équipe; autrement, tombe en création.
     if(this.monNumeroEquipe == undefined || this.monNumeroEquipe == 0) {
       this.monEquipe = new Equipe();
-      this.monEquipe.no_Equipe = 0;
-      this.monEquipe.nom_Equipe = '';
+      this.monEquipe.id = 0;
+      this.monEquipe.nomEquipe = '';
       this.monEquipe.ville = '';
-      this.monEquipe.annee_debut = new Date().getFullYear();
-      this.monEquipe.annee_fin = null;
-      this.monEquipe.est_Devenue_Equipe = null;
+      this.monEquipe.anneedebut = new Date().getFullYear();
+      this.monEquipe.anneefin = null;
+      this.monEquipe.estDevenueEquipe = null;
 
       this.equipeForm.patchValue(this.monEquipe);
     } else {
@@ -58,16 +58,16 @@ export class EquipeModifierComponent implements OnInit {
   }
 
   surEnregistrer(): void {
-    this.monEquipe.nom_Equipe = this.equipeForm.get('nom_Equipe')!.value;
+    this.monEquipe.nomEquipe = this.equipeForm.get('nomEquipe')!.value;
     this.monEquipe.ville = this.equipeForm.get('ville')!.value;
-    this.monEquipe.annee_debut = this.equipeForm.get('annee_debut')!.value;
-    this.monEquipe.annee_fin = this.equipeForm.get('annee_fin')!.value;
-    this.monEquipe.est_Devenue_Equipe = this.equipeForm.get('est_Devenue_Equipe')!.value;
+    this.monEquipe.anneedebut = this.equipeForm.get('anneeDebut')!.value;
+    this.monEquipe.anneefin = this.equipeForm.get('anneeFin')!.value;
+    this.monEquipe.estDevenueEquipe = this.equipeForm.get('estDevenueEquipe')!.value;
 
     const monObservationCreation = {
       next: (reponse: Equipe) => {
-        this.monNumeroEquipe = reponse.no_Equipe;
-        this.monEquipe.no_Equipe = reponse.no_Equipe;
+        this.monNumeroEquipe = reponse.id;
+        this.monEquipe.id = reponse.id;
         this.equipeForm.patchValue({messageAAfficher: 'Création effectuée'});
       },
       error: (err: Error) => { this.equipeForm.patchValue({messageAAfficher: err.message }); }

@@ -24,7 +24,7 @@ export class JoueurModifierComponent implements OnInit {
         this.joueurForm = this.fb.group({
           prenom: [''],
           nom: [''],
-          date_Naissance: [],
+          dateNaissance: [],
           ville_naissance: [''],
           pays_origine: [''],
           messageAAfficher: ['']
@@ -35,12 +35,12 @@ export class JoueurModifierComponent implements OnInit {
     this.monNumeroJoueur = +this.routeActive.snapshot.paramMap.get('id')!;
 
     if(this.monNumeroJoueur == 0) {
-      this.monJoueur.no_Joueur = 0;
+      this.monJoueur.id = 0;
       this.monJoueur.prenom = '';
       this.monJoueur.nom = '';
-      this.monJoueur.date_Naissance = new Date();
-      this.monJoueur.ville_naissance = '';
-      this.monJoueur.pays_origine = '';
+      this.monJoueur.dateNaissance = new Date();
+      this.monJoueur.villeNaissance = '';
+      this.monJoueur.paysOrigine = '';
     } else {
       const monObservation = {
         next: (reponse: JoueurDto) => {
@@ -58,9 +58,9 @@ export class JoueurModifierComponent implements OnInit {
     
     this.monJoueur.prenom = this.joueurForm.get('prenom')!.value;
     this.monJoueur.nom = this.joueurForm.get('nom')!.value;
-    this.monJoueur.date_Naissance = this.joueurForm.get('date_Naissance')!.value;
-    this.monJoueur.ville_naissance = this.joueurForm.get('ville_naissance')!.value;
-    this.monJoueur.pays_origine = this.joueurForm.get('pays_origine')!.value;
+    this.monJoueur.dateNaissance = this.joueurForm.get('dateNaissance')!.value;
+    this.monJoueur.villeNaissance = this.joueurForm.get('villeNaissance')!.value;
+    this.monJoueur.paysOrigine = this.joueurForm.get('paysOrigine')!.value;
 
     const monObservationCreation = {
       next: () => { this.joueurForm.patchValue({messageAAfficher: 'Création effectuée'}); },

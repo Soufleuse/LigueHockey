@@ -1,3 +1,4 @@
+import { Equipe } from "./equipe";
 import { JoueurDto } from "./joueur";
 
 export class StatsJoueurDto {
@@ -18,6 +19,9 @@ export class StatsJoueurDto {
     tirsAlloues: number = 0;
     minutesJouees: number = 0;
 
-    no_JoueurRefId : number = 0;
+    joueurId: number = 0;
     joueur: JoueurDto = new JoueurDto();
+
+    equipeId: number = 0;
+    equipe: Equipe = new Equipe();
 }

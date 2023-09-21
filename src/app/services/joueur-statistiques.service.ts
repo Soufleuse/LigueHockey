@@ -31,7 +31,7 @@ export class JoueurStatistiquesService extends baseService {
    }
 
    majStatsJoueur(statsJoueur: StatsJoueurDto): Observable<StatsJoueurDto> {
-    const monUrl = this.statsJoueurUrl + statsJoueur.no_JoueurRefId + `/` + statsJoueur.anneeStats;
+    const monUrl = this.statsJoueurUrl + statsJoueur.joueurId + `/` + statsJoueur.anneeStats;
     return this.http.put<StatsJoueurDto>(monUrl, statsJoueur, this.httpOptions)
       .pipe(catchError(this.handleError('put', statsJoueur)));
     }

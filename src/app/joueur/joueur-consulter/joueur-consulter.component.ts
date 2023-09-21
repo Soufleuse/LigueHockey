@@ -22,9 +22,9 @@ export class JoueurConsulterComponent implements OnInit {
       
     this.joueurForm = this.fb.group({
       prenomNom: [''],
-      date_naissance: [''],
-      ville_naissance: [''],
-      pays_origine: ['']
+      dateNaissance: [''],
+      villeNaissance: [''],
+      paysOrigine: ['']
     });
      }
 
@@ -35,11 +35,12 @@ export class JoueurConsulterComponent implements OnInit {
       next: (reponse: JoueurDto) => {
         this.monJoueur = reponse;
         this.monJoueurAffichage = JoueurAffichage.From(this.monJoueur);
-        this.monJoueurAffichage.date_naissance =
-            formatDate(this.monJoueurAffichage.date_naissance, 'shortDate', 'fr-ca');
+        this.monJoueurAffichage.dateNaissance =
+            formatDate(this.monJoueurAffichage.dateNaissance, 'shortDate', 'fr-ca');
         this.joueurForm.patchValue(this.monJoueurAffichage);
       },
-      error: (err: Error) => { console.log(err); }
+      error: (err: Error) => { console.log(err); },
+      complete: () => { console.log("Lecture du joueur complété."); }
     };
 
     this.joueurService.obtenirJoueur(+monNumeroJoueur!).subscribe(monObservation);

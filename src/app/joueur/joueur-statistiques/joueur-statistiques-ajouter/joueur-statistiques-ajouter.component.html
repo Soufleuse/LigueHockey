@@ -2,8 +2,8 @@
     <label for=selectionJoueur>Ajouter des statistiques pour </label>
     <div class="form-row">
         <select id="selectionJoueur">
-            <option *ngFor="let unJoueur of listeJoueur;" value="{{ unJoueur.no_Joueur }}">
-                {{ unJoueur.no_Joueur }} {{ unJoueur.prenom }} {{ unJoueur.nom }}
+            <option *ngFor="let unJoueur of listeJoueur;" value="{{ unJoueur.id }}">
+                {{ unJoueur.id }} {{ unJoueur.prenom }} {{ unJoueur.nom }}
             </option>
         </select>
     </div>
