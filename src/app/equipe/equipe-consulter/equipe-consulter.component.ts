@@ -19,11 +19,11 @@ export class EquipeConsulterComponent implements OnInit {
               private routeActive: ActivatedRoute) {
     
     this.equipeForm = this.fb.group({
-      nom_Equipe: [''],
+      nomEquipe: [''],
       ville: [''],
-      annee_debut: [''],
-      annee_fin: [''],
-      est_Devenue_Equipe: ['']
+      anneeDebut: [''],
+      anneeFin: [''],
+      estDevenueEquipe: ['']
     });
    }
 

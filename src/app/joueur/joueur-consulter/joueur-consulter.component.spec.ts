@@ -15,12 +15,12 @@ describe('JoueurConsulterComponent', () => {
     
     joueurService.obtenirJoueur.and.returnValue(
       of<JoueurDto>(<JoueurDto> {
-        no_Joueur: 1,
+        id: 1,
         prenom: 'Steve',
         nom: 'Lemieux',
-        date_Naissance: maDateNaissance,
-        ville_naissance: 'Levis',
-        pays_origine: 'Canada'
+        dateNaissance: maDateNaissance,
+        villeNaissance: 'Levis',
+        paysOrigine: 'Canada'
       })
     );
 

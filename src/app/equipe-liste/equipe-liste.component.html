@@ -14,18 +14,18 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of data">
-                <td>{{ item.no_Equipe }}</td>
-                <td>{{ item.nom_Equipe }}</td>
+                <td>{{ item.id }}</td>
+                <td>{{ item.nomEquipe }}</td>
                 <td>{{ item.ville }}</td>
-                <td>{{ item.annee_debut }}</td>
+                <td>{{ item.anneedebut }}</td>
                 <td>
-                    <button type="button" (click)="consulterAlignement(item.no_Equipe)">Alignement...</button>
+                    <button type="button" (click)="consulterAlignement(item.id)">Alignement...</button>
                 </td>
                 <td>
-                    <button type="button" (click)="consulterEquipe(item.no_Equipe)">Consulter</button>
+                    <button type="button" (click)="consulterEquipe(item.id)">Consulter</button>
                 </td>
                 <td>
-                    <button type="button" (click)="modifierEquipe(item.no_Equipe)">Modifier</button>
+                    <button type="button" (click)="modifierEquipe(item.id)">Modifier</button>
                 </td>
             </tr>
         </tbody>

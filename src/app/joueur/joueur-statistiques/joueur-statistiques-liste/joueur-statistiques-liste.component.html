@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of data">
-                <th scope="row">{{ item.no_JoueurRefId }}</th>
+                <th scope="row">{{ item.joueurId }}</th>
                 <td>{{ item.joueur.prenom }} {{ item.joueur.nom }}</td>
                 <td>{{ item.nbPartiesJouees }}</td>
                 <td>{{ item.nbButs }}</td>
@@ -29,10 +29,10 @@
                 <td>{{ item.nbMinutesPenalites }}</td>
                 <td>{{ item.plusseMoins }}</td>
                 <td>
-                    <button type="button" (click)="consulterStatistiquesJoueur(item.no_JoueurRefId, item.anneeStats)">Consulter</button>
+                    <button type="button" (click)="consulterStatistiquesJoueur(item.joueurId, item.anneeStats)">Consulter</button>
                 </td>
                 <td>
-                    <button type="button" (click)="modifierStatistiquesJoueur(item.no_JoueurRefId, item.anneeStats)">Modifier</button>
+                    <button type="button" (click)="modifierStatistiquesJoueur(item.joueurId, item.anneeStats)">Modifier</button>
                 </td>
             </tr>
         </tbody>

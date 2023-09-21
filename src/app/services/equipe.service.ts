@@ -32,7 +32,7 @@ export class EquipeService extends baseService {
   }
 
   majEquipe(equipe: Equipe): Observable<Equipe> {
-    const monUrl = this.equipeUrl + `/` + equipe.no_Equipe;
+    const monUrl = this.equipeUrl + `/` + equipe.id;
     return this.http.put<Equipe>(monUrl, equipe, this.httpOptions)
       .pipe(catchError(this.handleError('put', equipe)));
   }

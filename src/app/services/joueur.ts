@@ -1,27 +1,27 @@
 export class JoueurDto {
-    no_Joueur: number = 0;
+    id: number = 0;
     prenom: string = "";
     nom: string = "";
-    date_Naissance: Date = new Date();
-    ville_naissance: string = "";
-    pays_origine: string = "";
+    dateNaissance: Date = new Date();
+    villeNaissance: string = "";
+    paysOrigine: string = "";
 }
 
 export class JoueurAffichage {
-    no_joueur: number = 0;
+    id: number = 0;
     prenomNom: string = "";
-    date_naissance: string = "";
-    ville_naissance: string = "";
-    pays_origine: string = "";
+    dateNaissance: string = "";
+    villeNaissance: string = "";
+    paysOrigine: string = "";
 
     static From(o: JoueurDto): JoueurAffichage {
         var retour = new JoueurAffichage();
 
-        retour.no_joueur = o.no_Joueur;
+        retour.id = o.id;
         retour.prenomNom = o.prenom + ' ' + o.nom;
-        retour.date_naissance = o.date_Naissance.toString();
-        retour.ville_naissance = o.ville_naissance;
-        retour.pays_origine = o.pays_origine;
+        retour.dateNaissance = o.dateNaissance.toString();
+        retour.villeNaissance = o.villeNaissance;
+        retour.paysOrigine = o.paysOrigine;
 
         return retour;
     }

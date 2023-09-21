@@ -17,28 +17,28 @@ describe('EquipeListeComponent', () => {
       of<Equipe[]>(<Equipe[]>
         [
           <Equipe>{
-            no_Equipe: 1,
-            nom_Equipe: 'Canadiens',
+            id: 1,
+            nomEquipe: 'Canadiens',
             ville: 'Montréal',
-            annee_debut: 1909,
-            annee_fin: -1,
-            est_Devenue_Equipe: -1
+            anneedebut: 1909,
+            anneefin: -1,
+            estDevenueEquipe: -1
           },
           <Equipe>{
-            no_Equipe: 2,
-            nom_Equipe: 'Bruins',
+            id: 2,
+            nomEquipe: 'Bruins',
             ville: 'Boston',
-            annee_debut: 1917,
-            annee_fin: -1,
-            est_Devenue_Equipe: -1
+            anneedebut: 1917,
+            anneefin: -1,
+            estDevenueEquipe: -1
           },
           <Equipe>{
-            no_Equipe: 3,
-            nom_Equipe: 'Maple Leafs',
+            id: 3,
+            nomEquipe: 'Maple Leafs',
             ville: 'Toronto',
-            annee_debut: 1912,
-            annee_fin: -1,
-            est_Devenue_Equipe: -1
+            anneedebut: 1912,
+            anneefin: -1,
+            estDevenueEquipe: -1
           }
         ]
       )

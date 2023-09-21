@@ -3,12 +3,12 @@
     <input class="form-control" type="text" id="prenomJoueur" formControlName="prenom">
     <label for="nomJoueur">Nom du joueur: </label>
     <input class="form-control" type="text" id="nomJoueur" formControlName="nom">
-    <label for="date_naissance">Date de naissance: </label>
-    <input class="form-control" type="text" id="date_Naissance" formControlName="date_Naissance" value="{{ this.monJoueur.date_Naissance | date: 'yyyy-MM-dd' }}">
+    <label for="dateNaissance">Date de naissance: </label>
+    <input class="form-control" type="text" id="dateNaissance" formControlName="dateNaissance" value="{{ this.monJoueur.dateNaissance | date: 'yyyy-MM-dd' }}">
     <label for="ville">Ville de naissance: </label>
-    <input class="form-control" type="text" id="ville" formControlName="ville_naissance">
+    <input class="form-control" type="text" id="ville" formControlName="villeNaissance">
     <label for="pays_origine">Pays d'origine: </label>
-    <input class="form-control" type="text" id="pays_origine" formControlName="pays_origine">
+    <input class="form-control" type="text" id="paysOrigine" formControlName="paysOrigine">
     
     <button type="submit" class="btn btn-primary my-3" (click)="surEnregistrer()">Soumettre</button>
     <input class="form-control" type="text" id="messageAAfficher" formControlName="messageAAfficher" readonly>

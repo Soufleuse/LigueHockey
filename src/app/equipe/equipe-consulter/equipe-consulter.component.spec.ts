@@ -21,12 +21,12 @@ describe('EquipeConsulterComponent', () => {
     const equipeService = jasmine.createSpyObj<EquipeService>('EquipeService', ['obtenirEquipe']);
     equipeService.obtenirEquipe.and.returnValue(
       of(<Equipe>(<Equipe>{
-        no_Equipe: 1,
-        nom_Equipe: 'Canadiens',
+        id: 1,
+        nomEquipe: 'Canadiens',
         ville: 'Montréal',
-        annee_debut: 1909,
-        annee_fin: -1,
-        est_Devenue_Equipe: -1
+        anneedebut: 1909,
+        anneefin: -1,
+        estDevenueEquipe: -1
       }))
     );
 
@@ -56,7 +56,7 @@ describe('EquipeConsulterComponent', () => {
     expect(component).toBeTruthy();
   });*/
   it('devrait charger les données', inject([NgControl], (injectService: NgControl) => {
-    let nomEquipe = component.equipeForm.controls['nom_Equipe'];
+    let nomEquipe = component.equipeForm.controls['nomEquipe'];
     expect(nomEquipe.valid).toBeTruthy();
   }));
 });
