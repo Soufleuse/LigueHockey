@@ -47,4 +47,8 @@ export class AlignementListeComponent implements OnInit {
   consulterJoueur(noJoueur: number): void {
     this.router.navigate(['joueur-consulter/' + noJoueur]);
   }
+
+  enleverDeLAlignement(id: number): void {
+    this.router.navigate(['alignement-modifier/' + id]);
+  }
 }
