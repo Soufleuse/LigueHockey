@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { baseService } from './baseService';
 import { Alignement } from './alignement';
 
@@ -33,5 +33,16 @@ export class AlignementService extends baseService {
    obtenirNomEquipeVilleHote(idEquipe: number): Observable<string> {
     const url = this.baseUrl + "Equipe/nomequipeville/" + idEquipe;
     return this.http.get(url, {responseType: 'text'});
+   }
+
+   mettreAJourAlignement(monAlignement: Alignement): Observable<Alignement> {
+    const url = this.alignementUrl + monAlignement.id;
+    return this.http.put<Alignement>(url, monAlignement, this.httpOptions)
+      .pipe(catchError(this.handleError('put', monAlignement)));
+   }
+
+   creerAlignement(monAlignement: Alignement): Observable<Alignement> {
+    const url = this.alignementUrl;
+    return this.http.post<Alignement>(url, monAlignement, this.httpOptions);
    }
 }
