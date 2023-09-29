@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable, catchError } from 'rxjs';
 import { baseService } from './baseService';
 import { Alignement } from './alignement';
 
@@ -10,14 +9,40 @@ import { Alignement } from './alignement';
 })
 export class AlignementService extends baseService {
 
-  private alignementUrl = this.baseUrl + 'equipe_joueurBds';
+  private alignementUrl = this.baseUrl + 'equipejoueur/';
 
   constructor(private http: HttpClient) {
     super();
    }
 
    obtenirAlignementSelonEquipe(noEquipe: number): Observable<Alignement[]> {
-     const url = this.alignementUrl + `/` + noEquipe;
+     const url = this.alignementUrl + `parequipe/` + noEquipe;
      return this.http.get<Alignement[]>(url, this.httpOptions);
+   }
+
+   obtenirAlignementAvecId(id: number): Observable<Alignement> {
+    const url = this.alignementUrl + id;
+    return this.http.get<Alignement>(url, this.httpOptions);
+   }
+
+   obtenirPrenomNomJoueur(idJoueur: number): Observable<string> {
+    const url = this.baseUrl + `joueur/obtenirprenomnom/` + idJoueur;
+    return this.http.get(url, {responseType: 'text'});
+   }
+
+   obtenirNomEquipeVilleHote(idEquipe: number): Observable<string> {
+    const url = this.baseUrl + "Equipe/nomequipeville/" + idEquipe;
+    return this.http.get(url, {responseType: 'text'});
+   }
+
+   mettreAJourAlignement(monAlignement: Alignement): Observable<Alignement> {
+    const url = this.alignementUrl + monAlignement.id;
+    return this.http.put<Alignement>(url, monAlignement, this.httpOptions)
+      .pipe(catchError(this.handleError('put', monAlignement)));
+   }
+
+   creerAlignement(monAlignement: Alignement): Observable<Alignement> {
+    const url = this.alignementUrl;
+    return this.http.post<Alignement>(url, monAlignement, this.httpOptions);
    }
 }

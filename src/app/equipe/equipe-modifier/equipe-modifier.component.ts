@@ -12,7 +12,7 @@ import { EquipeService } from 'src/app/services/equipe.service';
 export class EquipeModifierComponent implements OnInit {
 
   equipeForm: FormGroup;
-  monEquipe: Equipe = new Equipe() /*| undefined = undefined*/;
+  monEquipe: Equipe = new Equipe();
   private monNumeroEquipe: number = 0;
 
   constructor(private fb: FormBuilder,

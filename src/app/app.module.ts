@@ -14,13 +14,14 @@ import { JoueurModifierComponent } from './joueur/joueur-modifier/joueur-modifie
 
 import { registerLocaleData, DatePipe } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import { AlignementListeComponent } from './alignement/alignement-liste/alignement-liste.component';
 import { JoueurStatistiquesConsulterComponent } from './joueur/joueur-statistiques/joueur-statistiques-consulter/joueur-statistiques-consulter.component';
 import { JoueurStatistiquesModifierComponent } from './joueur/joueur-statistiques/joueur-statistiques-modifier/joueur-statistiques-modifier.component';
 import { JoueurStatistiquesListeComponent } from './joueur/joueur-statistiques/joueur-statistiques-liste/joueur-statistiques-liste.component';
 import { JoueurStatistiquesAjouterComponent } from './joueur/joueur-statistiques/joueur-statistiques-ajouter/joueur-statistiques-ajouter.component';
 import { EquipeStatistiquesListeComponent } from './equipe/equipe-statistiques/equipe-statistiques-liste/equipe-statistiques-liste.component';
 import { EquipeStatistiquesConsulterComponent } from './equipe/equipe-statistiques/equipe-statistiques-consulter/equipe-statistiques-consulter.component';
+import { AlignementListeComponent } from './alignement/alignement-liste/alignement-liste.component';
+import { AlignementModifierComponent } from './alignement/alignement-modifier/alignement-modifier.component';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -38,7 +39,8 @@ registerLocaleData(localeFr);
     JoueurStatistiquesListeComponent,
     JoueurStatistiquesAjouterComponent,
     EquipeStatistiquesListeComponent,
-    EquipeStatistiquesConsulterComponent
+    EquipeStatistiquesConsulterComponent,
+    AlignementModifierComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ registerLocaleData(localeFr);
       { path: 'joueur-consulter/:id', component: JoueurConsulterComponent },
       { path: 'joueur-modifier/:id', component: JoueurModifierComponent },
       { path: 'alignement-liste/:id', component: AlignementListeComponent },
+      { path: 'alignement-modifier/:id', component: AlignementModifierComponent },
       { path: 'joueur-statistiques-liste', component: JoueurStatistiquesListeComponent },
       { path: 'joueur-statistiques-consulter/:noJoueur/:anneeStats', component: JoueurStatistiquesConsulterComponent },
       { path: 'joueur-statistiques-modifier/:noJoueur/:anneeStats', component: JoueurStatistiquesModifierComponent },

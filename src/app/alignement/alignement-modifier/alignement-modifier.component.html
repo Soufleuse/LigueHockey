@@ -1,0 +1,23 @@
+<div class="form-group" [formGroup]="alignementForm">
+    <label for="prenomNomJoueur">Nom du joueur: </label>
+    <input class="form-control" type="text" id="prenomNomJoueur" formControlName="prenomNomJoueur" readonly>
+    <label for="equipeActuelle">Équipe actuelle: </label>
+    <input class="form-control" type="text" id="equipeActuelle" formControlName="equipeActuelle" readonly>
+    <label for="selectionEquipe">Nouvelle équipe: </label>
+    <div class="form-row">
+        <select id="selectionEquipe">
+            <option *ngFor="let uneEquipe of listeEquipe;" value="{{ uneEquipe.id }}">
+                {{ uneEquipe.id }} {{ uneEquipe.nomEquipe }} {{ uneEquipe.ville }}
+            </option>
+        </select>
+    </div>
+    <label for="dateFinAvecEquipeActuelle">Date de fin: </label>
+    <input class="form-control" type="date" id="dateFinAvecEquipeActuelle" formControlName="dateFinAvecEquipeActuelle" placeholder="aaaa-MM-dd">
+    
+    <div style="text-align: center;">
+        <button type="submit" class="btn btn-primary my-3" (click)="surEnregistrer()">Soumettre</button><br>
+    </div>
+    <span style="display: block; overflow: hidden;">
+        <input style="width: 100%;" class="form-control" type="text" id="messageAAfficher" formControlName="messageAAfficher" readonly>
+    </span>
+</div>
