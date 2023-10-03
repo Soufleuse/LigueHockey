@@ -19,7 +19,7 @@ export class JoueurStatistiquesListeComponent implements OnInit {
     const monObservation = {
       next: (reponse: StatsJoueurDto[]) => { this.data = reponse; },
       error: (err: Error) => { console.log('Erreur: ' + err.message); },
-      complete: () => { console.log("Lecture r�ussie"); }
+      complete: () => { console.log("Lecture réussie"); }
     };
     this.joueurStatsService.obtenirListeStatsJoueur().subscribe(monObservation);
   }

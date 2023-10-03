@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  AnneeStats: 2020,
+  AnneeStats: 2023,
   baseUrl: `http://localhost:5245/api/`
 };
 

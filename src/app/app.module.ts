@@ -22,6 +22,8 @@ import { EquipeStatistiquesListeComponent } from './equipe/equipe-statistiques/e
 import { EquipeStatistiquesConsulterComponent } from './equipe/equipe-statistiques/equipe-statistiques-consulter/equipe-statistiques-consulter.component';
 import { AlignementListeComponent } from './alignement/alignement-liste/alignement-liste.component';
 import { AlignementModifierComponent } from './alignement/alignement-modifier/alignement-modifier.component';
+import { EquipeStatistiquesAjouterComponent } from './equipe/equipe-statistiques/equipe-statistiques-ajouter/equipe-statistiques-ajouter.component';
+import { EquipeStatistiquesModifierComponent } from './equipe/equipe-statistiques/equipe-statistiques-modifier/equipe-statistiques-modifier.component';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -40,7 +42,9 @@ registerLocaleData(localeFr);
     JoueurStatistiquesAjouterComponent,
     EquipeStatistiquesListeComponent,
     EquipeStatistiquesConsulterComponent,
-    AlignementModifierComponent
+    AlignementModifierComponent,
+    EquipeStatistiquesAjouterComponent,
+    EquipeStatistiquesModifierComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,10 @@ registerLocaleData(localeFr);
       { path: 'equipe-liste', component: EquipeListeComponent },
       { path: 'equipe-consulter/:id', component: EquipeConsulterComponent },
       { path: 'equipe-modifier/:id', component: EquipeModifierComponent },
+      { path: 'equipe-statistiques-liste', component: EquipeStatistiquesListeComponent },
+      { path: 'equipe-statistiques-consulter/:noEquipe/:anneeStats', component: EquipeStatistiquesConsulterComponent },
+      { path: 'equipe-statistiques-modifier/:noEquipe/:anneeStats', component: EquipeStatistiquesModifierComponent },
+      { path: 'equipe-statistiques-ajouter', component: EquipeStatistiquesAjouterComponent },
       { path: 'joueur-liste', component: JoueurListeComponent },
       { path: 'joueur-consulter/:id', component: JoueurConsulterComponent },
       { path: 'joueur-modifier/:id', component: JoueurModifierComponent },
