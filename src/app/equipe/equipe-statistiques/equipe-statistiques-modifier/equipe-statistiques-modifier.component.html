@@ -1,0 +1,22 @@
+<div class="form-group" [formGroup]="statsEquipeForm">
+    <h4>Modifier les statistiques de {{ data!.equipe.nomEquipe }} {{ data!.equipe.ville }}</h4>
+    <div class="column">
+        <label for="nbPartiesJouees">Nb Parties jouées: </label>
+        <label for="nbVictoires">Nombre de victoires: </label>
+        <label for="nbDefaites">Nombre de défaites: </label>
+        <label for="nbDefProlo">Nombre de défaites en prolongation: </label>
+        <label for="nbButsPour">Nombre de buts pour: </label>
+        <label for="nbButsContre">Nombre de buts contre: </label>
+    </div>
+    <div class="column">
+        <input class="form-control" type="number" id="nbPartiesJouees" formControlName="nbPartiesJouees">
+        <input class="form-control" type="number" id="nbVictoires" formControlName="nbVictoires">
+        <input class="form-control" type="number" id="nbDefaites" formControlName="nbDefaites">
+        <input class="form-control" type="number" id="nbDefProlo" formControlName="nbDefProlo">
+        <input class="form-control" type="number" id="nbButsPour" formControlName="nbButsPour">
+        <input class="form-control" type="number" id="nbButsContre" formControlName="nbButsContre">
+    </div>
+    
+    <button type="submit" class="btn btn-primary my-3" (click)="surEnregistrer()" style="float: left; clear: both;">Soumettre</button>
+    <input class="form-control" type="text" id="messageAAfficher" formControlName="messageAAfficher" readonly>
+</div>

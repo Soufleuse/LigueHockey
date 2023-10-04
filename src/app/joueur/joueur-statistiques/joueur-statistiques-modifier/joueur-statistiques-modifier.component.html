@@ -1,16 +1,20 @@
 <div class="form-group" [formGroup]="statsJoueurForm">
     <h4>Modifier les statistiques de {{ data.joueur.prenom }} {{ data.joueur.nom }}</h4>
-    <label for="nbPartiesJouees">Nb Parties jouées: </label>
-    <input class="form-control" type="text" id="nbPartiesJouees" formControlName="nbPartiesJouees">
-    <label for="nbButs">Nombre de buts: </label>
-    <input class="form-control" type="text" id="nbButs" formControlName="nbButs">
-    <label for="nbPasses">Nombre de passes: </label>
-    <input class="form-control" type="text" id="nbPasses" formControlName="nbPasses">
-    <label for="nbMinutesPenalites">Minutes de pénalités: </label>
-    <input class="form-control" type="text" id="nbMinutesPenalites" formControlName="nbMinutesPenalites">
-    <label for="plusseMoins">Plusse/moins: </label>
-    <input class="form-control" type="text" id="plusseMoins" formControlName="plusseMoins">
+    <div class="column">
+        <label for="nbPartiesJouees">Nb Parties jouées: </label>
+        <label for="nbButs">Nombre de buts: </label>
+        <label for="nbPasses">Nombre de passes: </label>
+        <label for="nbMinutesPenalites">Minutes de pénalités: </label>
+        <label for="plusseMoins">Plusse/moins: </label>
+    </div>
+    <div class="column">
+        <input class="form-control" type="number" id="nbPartiesJouees" formControlName="nbPartiesJouees" />
+        <input class="form-control" type="number" id="nbButs" formControlName="nbButs" />
+        <input class="form-control" type="number" id="nbPasses" formControlName="nbPasses" />
+        <input class="form-control" type="number" id="nbMinutesPenalites" formControlName="nbMinutesPenalites"/>
+        <input class="form-control" type="number" id="plusseMoins" formControlName="plusseMoins" />
+    </div>
     
     <button type="submit" class="btn btn-primary my-3" (click)="surEnregistrer()">Soumettre</button>
-    <input class="form-control" type="text" id="messageAAfficher" formControlName="messageAAfficher" readonly>
+    <input class="form-control" type="text" id="messageAAfficher" formControlName="messageAAfficher" readonly />
 </div>

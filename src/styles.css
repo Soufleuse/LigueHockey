@@ -1,20 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+form {
+  overflow: hidden;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+label {
+  float: left;
+  clear: both;
+  padding: 5px 0;
+  margin: 5px 0;
+}
+
 input[type=text] {
-    width: 100%;
-    padding: 12px 12px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  }
+  width: 100%;
+  padding: 12px 12px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+input[type=number] {
+  float: right;
+  clear: both;
+  width: 100%;
+  padding: 5px 0px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  text-align: right;
+}
 
 input[type=date] {
-    width: 100%;
-    padding: 12px 12px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  }
+  width: 100%;
+  padding: 12px 12px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
 
 select {
-   width: 100%;
-   padding: 12px 12px;
-   margin: 8px 0;
-  }
+  width: 100%;
+  padding: 12px 12px;
+  margin: 8px 0;
+}
