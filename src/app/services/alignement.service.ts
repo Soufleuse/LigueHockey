@@ -20,8 +20,8 @@ export class AlignementService extends baseService {
      return this.http.get<Alignement[]>(url, this.httpOptions);
    }
 
-   obtenirAlignementAvecId(id: number): Observable<Alignement> {
-    const url = this.alignementUrl + id;
+   obtenirAlignementAvecClef(equipeId: number, joueurId: number, dateDebutAvecEquipe: string): Observable<Alignement> {
+    const url = this.alignementUrl + 'parclef/' + equipeId + '/' + joueurId + '/' + dateDebutAvecEquipe;
     return this.http.get<Alignement>(url, this.httpOptions);
    }
 
@@ -36,7 +36,7 @@ export class AlignementService extends baseService {
    }
 
    mettreAJourAlignement(monAlignement: Alignement): Observable<Alignement> {
-    const url = this.alignementUrl + monAlignement.id;
+    const url = this.alignementUrl + monAlignement.joueurId + '/' + monAlignement.equipeId + '/' + monAlignement.dateDebutAvecEquipe;
     return this.http.put<Alignement>(url, monAlignement, this.httpOptions)
       .pipe(catchError(this.handleError('put', monAlignement)));
    }

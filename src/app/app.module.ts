@@ -62,7 +62,7 @@ registerLocaleData(localeFr);
       { path: 'joueur-consulter/:id', component: JoueurConsulterComponent },
       { path: 'joueur-modifier/:id', component: JoueurModifierComponent },
       { path: 'alignement-liste/:id', component: AlignementListeComponent },
-      { path: 'alignement-modifier/:id', component: AlignementModifierComponent },
+      { path: 'alignement-modifier/:equipeId/:joueurId/:dateDebutAvecEquipe', component: AlignementModifierComponent },
       { path: 'joueur-statistiques-liste', component: JoueurStatistiquesListeComponent },
       { path: 'joueur-statistiques-consulter/:noJoueur/:anneeStats', component: JoueurStatistiquesConsulterComponent },
       { path: 'joueur-statistiques-modifier/:noJoueur/:anneeStats', component: JoueurStatistiquesModifierComponent },

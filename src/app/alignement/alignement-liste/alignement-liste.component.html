@@ -15,7 +15,7 @@
                 <td>{{ item.dateDebutAffichee }}</td>
                 <td>
                     <button type="button" (click)="consulterJoueur(item.joueurId)">Consulter</button>
-                    <button type="button" (click)="enleverDeLAlignement(item.id)">Enlever de l'alignement</button>
+                    <button type="button" (click)="enleverDeLAlignement(item.equipeId, item.joueurId, item.dateDebutAvecEquipe)">Enlever de l'alignement</button>
                 </td>
             </tr>
         </tbody>
