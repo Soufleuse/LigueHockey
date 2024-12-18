@@ -44,7 +44,10 @@ export class AlignementModifierComponent implements OnInit {
     };
     this.equipeService.obtenirListeEquipes().subscribe(monGerantDestrade);
 
-    var monNoAlignement = +this.routeActive.snapshot.paramMap.get('id')!;
+    var monEquipeId = +this.routeActive.snapshot.paramMap.get('equipeId')!;
+    var monJoueurId = +this.routeActive.snapshot.paramMap.get('joueurId')!;
+    var maDateDebutAvecEquipe = this.routeActive.snapshot.paramMap.get('dateDebutAvecEquipe')!;
+
     const monFanfaron = {
       next: (reponse: Alignement) => {
         this.zeAlignement = reponse;
@@ -64,18 +67,21 @@ export class AlignementModifierComponent implements OnInit {
                 mesValeurs.prenomNomJoueur = this.zeAlignement.prenomNomJoueur;
                 mesValeurs.equipeActuelle = this.zeAlignement.nomEquipeVille;
                 this.alignementForm.patchValue(mesValeurs);
-                this.alignementForm.controls["dateFinAvecEquipeActuelle"].setValue(formatDate(this.zeAlignement.dateFinAvecEquipe!, "yyyy-MM-dd", "en"));
+                this.alignementForm.controls["dateFinAvecEquipeActuelle"].setValue(null);
+                if(this.zeAlignement.dateFinAvecEquipe != null) {
+                  this.alignementForm.controls["dateFinAvecEquipeActuelle"].setValue(formatDate(this.zeAlignement.dateFinAvecEquipe!, "yyyy-MM-dd", "en"));
+                }
               }
             };
-            this.alignementService.obtenirPrenomNomJoueur(reponse.joueurId).subscribe(allerChercherNomJoueur);
+            this.alignementService.obtenirPrenomNomJoueur(monJoueurId).subscribe(allerChercherNomJoueur);
           }
         };
-        this.alignementService.obtenirNomEquipeVilleHote(reponse.equipeId).subscribe(allerChercherNomEquipe);
+        this.alignementService.obtenirNomEquipeVilleHote(monEquipeId).subscribe(allerChercherNomEquipe);
       },
       error: (err: Error) => { console.log(err.message); },
       complete: () => { console.log("Lecture de l'alignement terminée"); }
     };
-    this.alignementService.obtenirAlignementAvecId(monNoAlignement).subscribe(monFanfaron);
+    this.alignementService.obtenirAlignementAvecClef(monEquipeId, monJoueurId, maDateDebutAvecEquipe).subscribe(monFanfaron);
   }
 
   surEnregistrer(): void {
@@ -104,7 +110,7 @@ export class AlignementModifierComponent implements OnInit {
             this.alignementForm.controls["dateFinAvecEquipeActuelle"].setValue(formatDate(this.zeAlignement.dateFinAvecEquipe!, "yyyy-MM-dd", "en"));
           } else {
             let equipeSelectionne = this.listeEquipe.find(x => x.id == idEquipeSelectionne);
-            this.zeAlignement.id = 0;
+            this.zeAlignement.joueurId = this.zeAlignement.joueurId;
             this.zeAlignement.equipeId = equipeSelectionne!.id;
             this.zeAlignement.nomEquipeVille = equipeSelectionne?.nomEquipe + ' ' + equipeSelectionne?.ville;
             this.zeAlignement.dateDebutAvecEquipe = new Date(annee, mois, jour, 0, 0, 0, 0);
