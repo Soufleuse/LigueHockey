@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { EquipeListeComponent } from './equipe-liste/equipe-liste.component';
 import { EquipeModifierComponent } from './equipe/equipe-modifier/equipe-modifier.component';
 import { EquipeConsulterComponent } from './equipe/equipe-consulter/equipe-consulter.component';
@@ -26,50 +26,43 @@ import { EquipeStatistiquesAjouterComponent } from './equipe/equipe-statistiques
 import { EquipeStatistiquesModifierComponent } from './equipe/equipe-statistiques/equipe-statistiques-modifier/equipe-statistiques-modifier.component';
 registerLocaleData(localeFr);
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    EquipeListeComponent,
-    EquipeModifierComponent,
-    EquipeConsulterComponent,
-    JoueurListeComponent,
-    JoueurConsulterComponent,
-    JoueurModifierComponent,
-    AlignementListeComponent,
-    JoueurStatistiquesConsulterComponent,
-    JoueurStatistiquesModifierComponent,
-    JoueurStatistiquesListeComponent,
-    JoueurStatistiquesAjouterComponent,
-    EquipeStatistiquesListeComponent,
-    EquipeStatistiquesConsulterComponent,
-    AlignementModifierComponent,
-    EquipeStatistiquesAjouterComponent,
-    EquipeStatistiquesModifierComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: 'equipe-liste', component: EquipeListeComponent },
-      { path: 'equipe-consulter/:id', component: EquipeConsulterComponent },
-      { path: 'equipe-modifier/:id', component: EquipeModifierComponent },
-      { path: 'equipe-statistiques-liste', component: EquipeStatistiquesListeComponent },
-      { path: 'equipe-statistiques-consulter/:noEquipe/:anneeStats', component: EquipeStatistiquesConsulterComponent },
-      { path: 'equipe-statistiques-modifier/:noEquipe/:anneeStats', component: EquipeStatistiquesModifierComponent },
-      { path: 'equipe-statistiques-ajouter', component: EquipeStatistiquesAjouterComponent },
-      { path: 'joueur-liste', component: JoueurListeComponent },
-      { path: 'joueur-consulter/:id', component: JoueurConsulterComponent },
-      { path: 'joueur-modifier/:id', component: JoueurModifierComponent },
-      { path: 'alignement-liste/:id', component: AlignementListeComponent },
-      { path: 'alignement-modifier/:equipeId/:joueurId/:dateDebutAvecEquipe', component: AlignementModifierComponent },
-      { path: 'joueur-statistiques-liste', component: JoueurStatistiquesListeComponent },
-      { path: 'joueur-statistiques-consulter/:noJoueur/:anneeStats', component: JoueurStatistiquesConsulterComponent },
-      { path: 'joueur-statistiques-modifier/:noJoueur/:anneeStats', component: JoueurStatistiquesModifierComponent },
-      { path: 'joueur-statistiques-ajouter', component: JoueurStatistiquesAjouterComponent }
-    ])
-  ],
-  providers: [DatePipe],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        EquipeListeComponent,
+        EquipeModifierComponent,
+        EquipeConsulterComponent,
+        JoueurListeComponent,
+        JoueurConsulterComponent,
+        JoueurModifierComponent,
+        AlignementListeComponent,
+        JoueurStatistiquesConsulterComponent,
+        JoueurStatistiquesModifierComponent,
+        JoueurStatistiquesListeComponent,
+        JoueurStatistiquesAjouterComponent,
+        EquipeStatistiquesListeComponent,
+        EquipeStatistiquesConsulterComponent,
+        AlignementModifierComponent,
+        EquipeStatistiquesAjouterComponent,
+        EquipeStatistiquesModifierComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        ReactiveFormsModule,
+        RouterModule.forRoot([
+            { path: 'equipe-liste', component: EquipeListeComponent },
+            { path: 'equipe-consulter/:id', component: EquipeConsulterComponent },
+            { path: 'equipe-modifier/:id', component: EquipeModifierComponent },
+            { path: 'equipe-statistiques-liste', component: EquipeStatistiquesListeComponent },
+            { path: 'equipe-statistiques-consulter/:noEquipe/:anneeStats', component: EquipeStatistiquesConsulterComponent },
+            { path: 'equipe-statistiques-modifier/:noEquipe/:anneeStats', component: EquipeStatistiquesModifierComponent },
+            { path: 'equipe-statistiques-ajouter', component: EquipeStatistiquesAjouterComponent },
+            { path: 'joueur-liste', component: JoueurListeComponent },
+            { path: 'joueur-consulter/:id', component: JoueurConsulterComponent },
+            { path: 'joueur-modifier/:id', component: JoueurModifierComponent },
+            { path: 'alignement-liste/:id', component: AlignementListeComponent },
+            { path: 'alignement-modifier/:equipeId/:joueurId/:dateDebutAvecEquipe', component: AlignementModifierComponent },
+            { path: 'joueur-statistiques-liste', component: JoueurStatistiquesListeComponent },
+            { path: 'joueur-statistiques-consulter/:noJoueur/:anneeStats', component: JoueurStatistiquesConsulterComponent },
+            { path: 'joueur-statistiques-modifier/:noJoueur/:anneeStats', component: JoueurStatistiquesModifierComponent },
+            { path: 'joueur-statistiques-ajouter', component: JoueurStatistiquesAjouterComponent }
+        ])], providers: [DatePipe, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
