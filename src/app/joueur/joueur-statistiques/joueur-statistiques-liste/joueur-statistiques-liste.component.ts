@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JoueurStatistiquesService } from 'src/app/services/joueur-statistiques.service';
 import { StatsJoueurDto } from '../../../services/joueur-stats';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-joueur-statistiques-liste',
   templateUrl: './joueur-statistiques-liste.component.html',
-  styleUrls: ['./joueur-statistiques-liste.component.css']
+  styleUrls: ['./joueur-statistiques-liste.component.css'],
+  imports: [CommonModule]
 })
 export class JoueurStatistiquesListeComponent implements OnInit {
 

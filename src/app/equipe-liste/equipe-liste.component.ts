@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { EquipeService } from "../services/equipe.service";
 import { Equipe } from "../services/equipe";
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-equipe-liste',
   templateUrl: './equipe-liste.component.html',
-  styleUrls: ['./equipe-liste.component.css']
+  styleUrls: ['./equipe-liste.component.css'],
+  imports: [CommonModule]
 })
 export class EquipeListeComponent implements OnInit {
 

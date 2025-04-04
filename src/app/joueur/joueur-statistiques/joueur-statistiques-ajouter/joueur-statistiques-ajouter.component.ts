@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { JoueurDto } from 'src/app/services/joueur';
 import { JoueurStatistiquesService } from 'src/app/services/joueur-statistiques.service';
 import { StatsJoueurDto } from 'src/app/services/joueur-stats';
@@ -8,7 +8,8 @@ import { JoueurService } from 'src/app/services/joueur.service';
 @Component({
   selector: 'app-joueur-statistiques-ajouter',
   templateUrl: './joueur-statistiques-ajouter.component.html',
-  styleUrls: ['./joueur-statistiques-ajouter.component.css']
+  styleUrls: ['./joueur-statistiques-ajouter.component.css'],
+  imports: [ReactiveFormsModule]
 })
 export class JoueurStatistiquesAjouterComponent implements OnInit {
 

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { JoueurDto } from 'src/app/services/joueur';
 import { JoueurService } from 'src/app/services/joueur.service';
-import {DatePipe} from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-joueur-modifier',
   templateUrl: './joueur-modifier.component.html',
-  styleUrls: ['./joueur-modifier.component.css']
+  styleUrls: ['./joueur-modifier.component.css'],
+  imports: [ReactiveFormsModule, DatePipe]
 })
 export class JoueurModifierComponent implements OnInit {
   

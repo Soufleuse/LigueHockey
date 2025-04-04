@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { EquipeStatistiques } from 'src/app/services/equipe-statistiques';
 import { EquipeStatistiquesService } from 'src/app/services/equipe-statistiques.service';
@@ -7,7 +7,8 @@ import { EquipeStatistiquesService } from 'src/app/services/equipe-statistiques.
 @Component({
   selector: 'app-equipe-statistiques-modifier',
   templateUrl: './equipe-statistiques-modifier.component.html',
-  styleUrls: ['./equipe-statistiques-modifier.component.css']
+  styleUrls: ['./equipe-statistiques-modifier.component.css'],
+  imports: [ReactiveFormsModule]
 })
 export class EquipeStatistiquesModifierComponent implements OnInit {
   

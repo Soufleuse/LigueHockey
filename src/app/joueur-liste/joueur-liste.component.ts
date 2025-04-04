@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JoueurDto } from '../services/joueur';
 import { JoueurService } from '../services/joueur.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-joueur-liste',
   templateUrl: './joueur-liste.component.html',
-  styleUrls: ['./joueur-liste.component.css']
+  styleUrls: ['./joueur-liste.component.css'],
+  imports: [CommonModule]
 })
 export class JoueurListeComponent implements OnInit {
 

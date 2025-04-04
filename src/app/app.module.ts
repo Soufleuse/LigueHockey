@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Directive, Input, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { EquipeListeComponent } from './equipe-liste/equipe-liste.component';
 import { EquipeModifierComponent } from './equipe/equipe-modifier/equipe-modifier.component';
@@ -26,26 +25,9 @@ import { EquipeStatistiquesAjouterComponent } from './equipe/equipe-statistiques
 import { EquipeStatistiquesModifierComponent } from './equipe/equipe-statistiques/equipe-statistiques-modifier/equipe-statistiques-modifier.component';
 registerLocaleData(localeFr);
 
-@NgModule({ declarations: [
-        AppComponent,
-        EquipeListeComponent,
-        EquipeModifierComponent,
-        EquipeConsulterComponent,
-        JoueurListeComponent,
-        JoueurConsulterComponent,
-        JoueurModifierComponent,
-        AlignementListeComponent,
-        JoueurStatistiquesConsulterComponent,
-        JoueurStatistiquesModifierComponent,
-        JoueurStatistiquesListeComponent,
-        JoueurStatistiquesAjouterComponent,
-        EquipeStatistiquesListeComponent,
-        EquipeStatistiquesConsulterComponent,
-        AlignementModifierComponent,
-        EquipeStatistiquesAjouterComponent,
-        EquipeStatistiquesModifierComponent
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+@NgModule({ imports: [
+        BrowserModule,
+        FormsModule,
         ReactiveFormsModule,
         RouterModule.forRoot([
             { path: 'equipe-liste', component: EquipeListeComponent },
@@ -64,5 +46,8 @@ registerLocaleData(localeFr);
             { path: 'joueur-statistiques-consulter/:noJoueur/:anneeStats', component: JoueurStatistiquesConsulterComponent },
             { path: 'joueur-statistiques-modifier/:noJoueur/:anneeStats', component: JoueurStatistiquesModifierComponent },
             { path: 'joueur-statistiques-ajouter', component: JoueurStatistiquesAjouterComponent }
-        ])], providers: [DatePipe, provideHttpClient(withInterceptorsFromDi())] })
-export class AppModule { }
+        ])],
+    //bootstrap: [AppComponent],
+    providers: [DatePipe, provideHttpClient(withInterceptorsFromDi())] })
+
+    export class AppModule { }
