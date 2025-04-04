@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Equipe } from 'src/app/services/equipe';
 import { EquipeService } from 'src/app/services/equipe.service';
 
 @Component({
   selector: 'app-equipe-consulter',
   templateUrl: './equipe-consulter.component.html',
-  styleUrls: ['./equipe-consulter.component.css']
+  styleUrls: ['./equipe-consulter.component.css'],
+  imports: [ReactiveFormsModule]
 })
 export class EquipeConsulterComponent implements OnInit {
 

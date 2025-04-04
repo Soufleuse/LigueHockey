@@ -1,13 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Equipe } from 'src/app/services/equipe';
 import { EquipeService } from 'src/app/services/equipe.service';
 
 @Component({
   selector: 'app-equipe-modifier',
   templateUrl: './equipe-modifier.component.html',
-  styleUrls: ['./equipe-modifier.component.css']
+  styleUrls: ['./equipe-modifier.component.css'],
+  imports: [ReactiveFormsModule]
 })
 export class EquipeModifierComponent implements OnInit {
 

@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlignementService } from 'src/app/services/alignement.service';
 import { Alignement } from '../../services/alignement';
-import { formatDate } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-alignement-liste',
   templateUrl: './alignement-liste.component.html',
-  styleUrls: ['./alignement-liste.component.css']
+  styleUrls: ['./alignement-liste.component.css'],
+  imports: [CommonModule]
 })
 export class AlignementListeComponent implements OnInit {
 

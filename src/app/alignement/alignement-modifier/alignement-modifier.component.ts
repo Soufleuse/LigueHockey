@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Alignement } from 'src/app/services/alignement';
 import { AlignementService } from 'src/app/services/alignement.service';
@@ -11,7 +11,8 @@ import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-alignement-modifier',
   templateUrl: './alignement-modifier.component.html',
-  styleUrls: ['./alignement-modifier.component.css']
+  styleUrls: ['./alignement-modifier.component.css'],
+  imports: [ReactiveFormsModule]
 })
 export class AlignementModifierComponent implements OnInit {
   

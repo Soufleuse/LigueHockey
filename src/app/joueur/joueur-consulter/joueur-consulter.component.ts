@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JoueurDto, JoueurAffichage } from 'src/app/services/joueur';
 import { JoueurService } from 'src/app/services/joueur.service';
@@ -8,7 +8,8 @@ import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-joueur-consulter',
   templateUrl: './joueur-consulter.component.html',
-  styleUrls: ['./joueur-consulter.component.css']
+  styleUrls: ['./joueur-consulter.component.css'],
+  imports: [ReactiveFormsModule]
 })
 export class JoueurConsulterComponent implements OnInit {
 
@@ -26,7 +27,7 @@ export class JoueurConsulterComponent implements OnInit {
       villeNaissance: [''],
       paysOrigine: ['']
     });
-     }
+  }
 
   ngOnInit(): void {
     const monNumeroJoueur = this.routeActive.snapshot.paramMap.get('id');
