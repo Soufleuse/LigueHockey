@@ -6,21 +6,21 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nom équipe</th>
-                <th scope="col">Parties jouées</th>
-                <th scope="col">Nombre de victoires</th>
-                <th scope="col">Nombre de défaites</th>
-                <th scope="col">Nombre de défaites en prolongation</th>
-                <th scope="col">Nombre de buts pour</th>
-                <th scope="col">Nombre de buts contre</th>
+                <th scope="col" class="th-avec-border-right">#</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Nom équipe</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Parties jouées</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Nombre de victoires</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Nombre de défaites</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Nombre de défaites en prolongation</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Nombre de buts pour</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Nombre de buts contre</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of data">
-                <th scope="row">{{ item.equipeId }}</th>
+                <td scope="row">{{ item.equipeId }}</td>
                 <td>{{ item.equipe.nomEquipe }} {{ item.equipe.ville }}</td>
                 <td>{{ item.nbPartiesJouees }}</td>
                 <td>{{ item.nbVictoires }}</td>

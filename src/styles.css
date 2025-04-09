@@ -50,3 +50,42 @@ select {
   padding: 12px 12px;
   margin: 8px 0;
 }
+
+button {
+  min-width: 100px;
+  min-height: 25px;
+  margin: 4px;
+}
+
+table {
+  border: 1px solid;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border-bottom: 1px solid;
+  min-width: 25px;
+  padding-left: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+th {
+  text-align: left;
+  background-color: aqua;
+}
+
+.th-avec-border-right {
+  border-right: 1px solid;
+}
+
+.thtd-texte {
+  border-bottom: 1px solid;
+  min-width: 150px;
+}
+
+.thtd-texte-nodossard {
+  border-bottom: 1px solid;
+  min-width: 100px;
+}
