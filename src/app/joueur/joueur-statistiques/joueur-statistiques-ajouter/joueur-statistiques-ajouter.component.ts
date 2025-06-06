@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { JoueurDto } from 'src/app/services/joueur';
@@ -9,7 +10,7 @@ import { JoueurService } from 'src/app/services/joueur.service';
   selector: 'app-joueur-statistiques-ajouter',
   templateUrl: './joueur-statistiques-ajouter.component.html',
   styleUrls: ['./joueur-statistiques-ajouter.component.css'],
-  imports: [ReactiveFormsModule]
+  imports: [ReactiveFormsModule, CommonModule]
 })
 export class JoueurStatistiquesAjouterComponent implements OnInit {
 
@@ -34,7 +35,7 @@ export class JoueurStatistiquesAjouterComponent implements OnInit {
     this.joueurService.obtenirListeJoueur().subscribe(monObservable);
 
     let dateSysteme = new Date();
-                
+    
     this.statsJoueurForm = this.fb.group({
       anneeStats: [dateSysteme.getFullYear()],
       nbPartiesJouees: [0],

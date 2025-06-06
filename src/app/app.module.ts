@@ -11,7 +11,7 @@ import { JoueurListeComponent } from './joueur-liste/joueur-liste.component';
 import { JoueurConsulterComponent } from './joueur/joueur-consulter/joueur-consulter.component';
 import { JoueurModifierComponent } from './joueur/joueur-modifier/joueur-modifier.component';
 
-import { registerLocaleData, DatePipe } from '@angular/common';
+import { registerLocaleData, DatePipe, CommonModule } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { JoueurStatistiquesConsulterComponent } from './joueur/joueur-statistiques/joueur-statistiques-consulter/joueur-statistiques-consulter.component';
 import { JoueurStatistiquesModifierComponent } from './joueur/joueur-statistiques/joueur-statistiques-modifier/joueur-statistiques-modifier.component';
@@ -26,6 +26,7 @@ import { EquipeStatistiquesModifierComponent } from './equipe/equipe-statistique
 registerLocaleData(localeFr);
 
 @NgModule({ imports: [
+        CommonModule,
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,

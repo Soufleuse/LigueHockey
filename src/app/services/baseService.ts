@@ -12,12 +12,13 @@ export abstract class baseService {
 
     /**
      * Code de https://angular.io/tutorial/toh-pt6 .
-     * Handle Http operation that failed.
-     * Let the app continue.
-     * @param operation - name of the operation that failed
-     * @param result - optional value to return as the observable result
+     * Puis j'ai traduit, tsé qu'au Québec, on parle franssa.
+     * Gérer les opérations Http qui ont échouées.
+     * Laisse l'application continuer.
+     * @param operation - nom de l'opération qui a échoué
+     * @param result - Valeur optionnelle à retourner comme le résultat observable
      */
-     protected handleError<T>(operation = 'operation', result?: T) {
+     protected handleError<T>(operation = 'opération-au-coude', result?: T) {
        return (error: any): Observable<T> => {
    
        // TODO: send the error to remote logging infrastructure
