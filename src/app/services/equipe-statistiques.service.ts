@@ -19,16 +19,22 @@ export class EquipeStatistiquesService extends baseService {
   obtenirListeStatsEquipe(): Observable<EquipeStatistiques[]> {
     const url = this.statsEquipeUrl + `parannee/` + environment.AnneeStats;
     return this.http.get<EquipeStatistiques[]>(url, this.httpOptions);
-   }
+  }
 
-   obtenirStatsEquipe(equipeId: number, anneeStats: number): Observable<EquipeStatistiques> {
+  obtenirStatsEquipe(equipeId: number, anneeStats: number): Observable<EquipeStatistiques> {
     const url = this.statsEquipeUrl + equipeId + `/` + anneeStats;
     return this.http.get<EquipeStatistiques>(url, this.httpOptions);
-   }
+  }
 
-   majStatsEquipe(statsEquipe: EquipeStatistiques): Observable<EquipeStatistiques> {
+  majStatsEquipe(statsEquipe: EquipeStatistiques): Observable<EquipeStatistiques> {
     const url = this.statsEquipeUrl + statsEquipe.equipeId + `/` + statsEquipe.anneeStats;
     return this.http.put<EquipeStatistiques>(url, statsEquipe, this.httpOptions)
         .pipe(catchError(this.handleError('put', statsEquipe)));
-   }
+  }
+
+  creerStatsEquipe(statsEquipe: EquipeStatistiques): Observable<EquipeStatistiques> {
+    const url = this.statsEquipeUrl;
+    return this.http.post<EquipeStatistiques>(url, statsEquipe, this.httpOptions)
+        .pipe(catchError(this.handleError('post', statsEquipe)));
+  }
 }

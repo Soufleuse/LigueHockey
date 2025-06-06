@@ -1,1 +1,28 @@
-<p>equipe-statistiques-ajouter works!</p>
+<div class="form-group" [formGroup]="statsEquipeForm">
+    <label for=selectionJoueur>Ajouter des statistiques pour </label>
+    <div class="form-row">
+        <select id="selectionEquipe">
+            <option *ngFor="let uneEquipe of listeEquipe;" value="{{ uneEquipe.id }}">
+                {{ uneEquipe.id }} {{ uneEquipe.nomEquipe }} {{ uneEquipe.ville }}
+            </option>
+        </select>
+    </div>
+
+    <label for="anneeStats">Année des statistiques: </label>
+    <input class="form-control" type="text" id="anneeStats" formControlName="anneeStats">
+    <label for="nbPartiesJouees">Nb parties jouées: </label>
+    <input class="form-control" type="text" id="nbPartiesJouees" formControlName="nbPartiesJouees">
+    <label for="nbVictoires">Nombre de victoires: </label>
+    <input class="form-control" type="text" id="nbVictoires" formControlName="nbVictoires">
+    <label for="nbDefReg">Nombre de défaites à la régulière: </label>
+    <input class="form-control" type="text" id="nbDefReg" formControlName="nbDefReg">
+    <label for="nbDefProlo">Nombres de défaites en prolongation/en tirs de barrage: </label>
+    <input class="form-control" type="text" id="nbDefProlo" formControlName="nbDefProlo">
+    <label for="nbButsPour">Nombre de buts pour: </label>
+    <input class="form-control" type="text" id="nbButsPour" formControlName="nbButsPour">
+    <label for="nbButsContre">Nombre de buts contre: </label>
+    <input class="form-control" type="text" id="nbButsContre" formControlName="nbButsContre">
+    
+    <button type="submit" class="btn btn-primary my-3" (click)="surEnregistrer()">Soumettre</button>
+    <input class="form-control" type="text" id="messageAAfficher" formControlName="messageAAfficher" readonly>
+</div>
