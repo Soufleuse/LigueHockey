@@ -6,17 +6,17 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nom complet</th>
-                <th scope="col">Ville de naissance</th>
-                <th scope="col">Pays d'origine</th>
+                <th scope="col" class="th-avec-border-right">#</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Nom complet</th>
+                <th scope="col" class="th-avec-border-right thtd-texte">Ville de naissance</th>
+                <th scope="col"class="th-avec-border-right thtd-texte">Pays d'origine</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of data">
-                <th scope="row">{{ item.id }}</th>
+                <td scope="row">{{ item.id }}</td>
                 <td>{{ item.prenom }} {{ item.nom }}</td>
                 <td>{{ item.villeNaissance }}</td>
                 <td>{{ item.paysOrigine }}</td>
