@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/1b73cb2a-65f5-4a73-a86a-cc7a68d60ddf/resourceGroups/appsvc_windows_canadaeast/providers/Microsoft.Web/sites/LigueHockey",
+    "appService.deploySubpath": "."
+}
