@@ -95,7 +95,12 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "staticwebapp.config.json",
+                "input": ".",
+                "output": "."
+              }
             ],
             "styles": [
               "src/styles.css"
