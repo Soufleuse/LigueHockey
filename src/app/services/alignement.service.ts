@@ -9,7 +9,7 @@ import { Alignement } from './alignement';
 })
 export class AlignementService extends baseService {
 
-  private alignementUrl = this.baseUrl + 'equipejoueur/';
+  private alignementUrl = this.baseUrl + '/equipejoueur/';
 
   constructor(private http: HttpClient) {
     super();
@@ -26,7 +26,7 @@ export class AlignementService extends baseService {
    }
 
    obtenirPrenomNomJoueur(idJoueur: number): Observable<string> {
-    const url = this.baseUrl + `joueur/obtenirprenomnom/` + idJoueur;
+    const url = this.baseUrl + `/joueur/obtenirprenomnom/` + idJoueur;
     return this.http.get(url, {responseType: 'text'});
    }
 
